@@ -25,6 +25,7 @@ import logging
 import itertools
 import json
 import re
+import sys
 
 
 from operator import itemgetter
@@ -293,7 +294,7 @@ class HiveServerTColumnValue2(object):
 
   @classmethod
   def mark_nulls(cls, values, bytestring):
-    mask = bytearray(bytestring)
+    mask = bytearray(bytestring, 'utf-8')
 
     for n in mask:
       yield n & 0x01
@@ -308,6 +309,11 @@ class HiveServerTColumnValue2(object):
 
   @classmethod
   def set_nulls(cls, values, bytestring):
+    try:
+      bytestring = bytestring.decode('utf-8')
+    except:
+      pass
+
     if bytestring == '' or re.match('^(\x00)+$', bytestring): # HS2 has just \x00 or '', Impala can have \x00\x00...
       return values
     else:
