@@ -50,8 +50,8 @@ superusers and users.
     number. The user name is used to log into Hue and in file
     permissions and job submissions. This is a required field.
 </td></tr>
-<tr><td>Password and Password confirmation</td><td>    A password for the user. This is a required field.</td></tr>
-<tr><td>Create home directory</td><td>   Indicate whether to create a directory named /user/username in HDFS.
+<tr><td>Password and Password confirmation</td><td> A password for the user. This is a required field.</td></tr>
+<tr><td>Create home directory</td><td> Indicate whether to create a directory named /user/username in HDFS.
     For non-superusers, the user and group of the directory are
     username. For superusers, the user and group are username and
     supergroup.</td></tr></table>
@@ -63,11 +63,8 @@ superusers and users.
 <table>
 <tr><td>First name and Last name</td><td> The user's first and last name.
 </td></tr>
-<tr><td>E-mail address</td><td>The user's e-mail address. The e-mail address is used by the Job
-    Designer and Beeswax applications to send users an e-mail message
-    after certain actions have occurred. The Job Designer sends an
-    e-mail message after a job has completed. Beeswax sends a message
-    after a query has completed. If an e-mail address is not specified,
+<tr><td>E-mail address</td><td>The Editor can send an
+    e-mail message after a query has completed. If an e-mail address is not specified,
     the application will not attempt to email the user.</td></tr>
 <tr><td>Groups</td><td> The groups to which the user belongs. By default, a user is assigned
     to the **default** group, which allows access to all applications.
